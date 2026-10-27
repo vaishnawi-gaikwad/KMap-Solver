@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #07110F;
+    color: #e2e8f0;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #07110F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #172A27;
+  border-radius: 9999px;
+  border: 2px solid #07110F;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #244742;
+}
+
+/* Hide scrollbar for clean tab bars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* K-Map cell animations & glow effects */
+.cell-glow {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cell-glow:hover {
+  transform: translateY(-1px) scale(1.03);
+  box-shadow: 0 4px 15px -2px rgba(79, 195, 184, 0.3);
+}
+
+/* Floating animation */
+@keyframes pulseSubtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(0.99); }
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 3s ease-in-out infinite;
+}
